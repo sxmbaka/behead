@@ -114,6 +114,7 @@ behead [OPTIONS] [FILE]...
 - `-p, --params`: Checks tool parameters for testing purposes.
 - `--numbered`: Shows line numbers alongside the content.
 - `-i, --inverted`: When used, excludes the last specified number of lines or bytes from the output.
+- `-h, --help`: Displays the help message.
 
 ### Examples
 
