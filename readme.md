@@ -113,7 +113,7 @@ behead [OPTIONS] [FILE]...
 - `-z, --zero-terminated`: Uses NUL (`\0`) as the line delimiter instead of newline (`\n`).
 - `-p, --params`: Checks tool parameters for testing purposes.
 - `--numbered`: Shows line numbers alongside the content.
-- `-i, --inverted`: When used, excludes the last specified number of lines or bytes from the output.
+- `-i, --inverted`: when used, the result is the file excluding the last NUM lines or bytes.
 - `-h, --help`: Displays the help message.
 
 ### Examples
