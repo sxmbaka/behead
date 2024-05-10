@@ -1,14 +1,102 @@
-# better head (behead)
+# behead
 
 `behead` is a simple command-line application that resembles the GNU's head command. It reads the beginning of one or more files and outputs the specified number of lines or bytes to the standard output.
 
 ## Installation
 
-To use `behead`, you need to have Go installed. You can install `behead` using the following command:
+To use `behead`, you need to have Go installed. You can install `behead` by cloning the repository and building the binary locally.
+
+### Prerequisites
+
+Make sure you have Go installed on your machine. You can download and install Go from the [official Go website](https://golang.org/dl/).
+
+### Build from Source
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/sxmbaka/behead.git
+   ```
+
+2. Navigate to the project directory:
+
+   ```bash
+   cd behead
+   ```
+
+3. Build the binary:
+
+   ```bash
+   go build
+   ```
+
+### Install the Binary
+
+After building the binary, you can install it to a directory in your system's PATH to make it accessible globally.
 
 ```bash
-go install github.com/sxmbaka/behead
+go install
 ```
+
+This command will build the binary and install it to the Go binary directory, which should be included in your system's PATH. After installation, you can use `behead` from any terminal window by typing `behead`.
+
+### Adding `behead` to the System PATH
+
+To make the `behead` command accessible from any terminal or command prompt window, you need to add the directory containing the `behead` executable to your system's PATH environment variable. Here's how to do it for different operating systems:
+
+#### Linux and macOS
+
+1. Open a terminal window.
+
+2. Edit your shell configuration file (e.g., `~/.bashrc` for Bash or `~/.zshrc` for Zsh) using a text editor:
+
+   ```bash
+   vim ~/.bashrc
+   ```
+
+   or
+
+   ```bash
+   vim ~/.zshrc
+   ```
+
+3. Add the following line at the end of the file to export the Go binary directory to the PATH:
+
+   ```bash
+   export PATH=$PATH:$(go env GOPATH)/bin
+   ```
+
+4. Save the file and exit the text editor.
+
+5. Source the updated configuration file to apply the changes:
+
+   ```bash
+   source ~/.bashrc
+   ```
+
+   or
+
+   ```bash
+   source ~/.zshrc
+   ```
+
+Now you can use the `behead` command from any terminal window.
+
+#### Windows
+
+1. Open the Start menu and search for "Environment Variables".
+
+2. Click on "Edit the system environment variables".
+
+3. In the System Properties window, click on "Environment Variables".
+
+4. Under "System Variables", select the "Path" variable and click "Edit".
+
+5. Click "New" and add the path to the Go binary directory (e.g., `C:\Go\bin`).
+
+6. Click "OK" to save the changes.
+
+Now you can use the `behead` command from any Command Prompt or PowerShell window.
 
 ## Usage
 
@@ -42,40 +130,6 @@ behead --numbered -v myfile.txt
 # Use NUL as the line delimiter
 behead -z myfile.txt
 ```
-
-## Development
-
-### Dependencies
-
-- [Cobra](https://github.com/spf13/cobra): Used for building the CLI application.
-
-### Build and Run Locally
-
-To build and run `behead` locally, follow these steps:
-
-1. Clone the repository:
-
-   ```bash
-   git clone https://github.com/sxmbaka/behead.git
-   ```
-
-2. Navigate to the project directory:
-
-   ```bash
-   cd behead
-   ```
-
-3. Build the binary:
-
-   ```bash
-   go build
-   ```
-
-4. Run `behead` with desired options and file paths:
-
-   ```bash
-   ./behead -n 5 myfile.txt
-   ```
 
 ## Contributing
 
