@@ -1,4 +1,4 @@
-# behead
+# behead (better head)
 
 `behead` is a simple command-line application that resembles the GNU's head command. It reads the beginning of one or more files and outputs the specified number of lines or bytes to the standard output.
 
