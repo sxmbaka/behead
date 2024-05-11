@@ -1,7 +1,7 @@
 package cmd
 
 import (
-	"fmt"
+	"os"
 
 	"github.com/spf13/cobra"
 )
@@ -32,13 +32,14 @@ var rootCmd = &cobra.Command{
 		}
 
 		if len(args) == 0 {
-			fmt.Println("@todo: use the stdin")
-			return
+			// Read from standard input (os.Stdin) when no file arguments are provided
+			cmd.Println("No files provided!\nSee behead --help for usage.")
+			os.Exit(1)
 		}
 
 		if params {
 			checkParams(lines, bytes, silent, verbose, zeroTerminated, numbered, args)
-			return
+			os.Exit(0)
 		}
 
 		if bytes == 0 {
